@@ -3,6 +3,7 @@ import { studentsData, departments } from "./data";
 import StudentForm from "./components/StudentForm";
 import StudentList from "./components/StudentList";
 import { ToastContainer, toast } from "react-toastify";
+import Swal from "sweetalert2"; 
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
@@ -58,21 +59,39 @@ function App() {
     };
 
     const handleDelete = (roll) => {
-        setStudents(students.filter(s => s.roll !== roll));
-        toast.warn("🗑️ Student deleted!", {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            theme: "dark",
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                setStudents(students.filter(s => s.roll !== roll));
+                toast.warn("🗑️ Student deleted!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    theme: "dark",
+                });
+
+                Swal.fire(
+                    "Deleted!",
+                    "The student has been removed.",
+                    "success"
+                );
+            }
         });
     };
 
     return (
         <div className="app">
-            <ToastContainer />  {/* Toast container added for notifications */}
+            <ToastContainer />  
             <h1>Student Management</h1>
             
             {isAdding ? (
