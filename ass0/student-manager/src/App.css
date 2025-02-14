@@ -1,0 +1,32 @@
+.app {
+  text-align: center;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.225); /* Light blue background */
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+button {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

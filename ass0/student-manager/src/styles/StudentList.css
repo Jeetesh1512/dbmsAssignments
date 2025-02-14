@@ -1,0 +1,157 @@
+/* Container to center the student list */
+.student-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    width: 100vw;
+    background-color: #383839;
+    padding: 20px;
+}
+
+/* Container for the student list */
+.student-list {
+    width: 60%;
+    max-width: 800px;
+    background: #2c2c2d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    position: relative;  /* Add this to make it the reference for positioning */
+    height: 500px; /* Set the height to any fixed value */
+    overflow-y: auto; /* Allows scrolling within the box if content overflows */
+}
+
+
+/* Header */
+h2 {
+    margin-bottom: 15px;
+    color: #e3e0e0;
+}
+
+/* Search bar container */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    gap: 8px;
+}
+
+/* Search input field */
+.search-bar input {
+    width: 55%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Search button */
+.search-bar button {
+    padding: 5px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+/* Search result box */
+.search-result {
+    background: #3f4041;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Table styles */
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.student-table th,
+.student-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.student-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Action buttons inside table */
+.student-table button {
+    padding: 5px 10px;
+    margin: 2px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.student-table button:first-child {
+    background-color: #28a745;
+    color: white;
+}
+
+.student-table button:first-child:hover {
+    background-color: #218838;
+}
+
+.student-table button:last-child {
+    background-color: #dc3545;
+    color: white;
+}
+
+.student-table button:last-child:hover {
+    background-color: #c82333;
+}
+
+/* Pagination buttons */
+.list-buttons {
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20px;   /* Distance from the top of the container */
+    right: 20px; /* Distance from the right of the container */
+    gap: 10px;
+    background-color: #2c2c2d; /* Matches the container background */
+}
+
+
+
+.list-buttons button {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.list-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.list-buttons button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
